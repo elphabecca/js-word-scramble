@@ -7,22 +7,34 @@
     <h1>A Javascript Word Scramble Game</h1>
 
     <script>
-        var WORDS     = ["booger", "apple", "hackbright", "mango"];
-        var SCRAMBLED = ["oogreb", "papel", "backrhight", "goman"];
+        var WORDS     = ["booger", "apple", "hackbright", "mango", "kitty", 
+                         "doggy", "commit", "python"];
+        var SCRAMBLED = ["oogreb", "papel", "backrhight", "goman", "tytki",
+                         "ggody", "timcmo", "htynop"];
 
         var playing = true;
 
         while (playing) {
 
-            // Grab a random word from the WORDS array
+            var i = Math.floor(Math.random() * WORDS.length);
+            var word = WORDS[i];
+            var scram = SCRAMBLED[i];
 
+            var scramPrompt = "The scrambled word is: " + scram + ".  What's yo guess???";
             // Grab the corresponding scrambled word from the SCRAMBLED array
 
             // prompt the user to guess the original word when given the scrambled word
+            var guess = prompt(scramPrompt);
+            // alert("Your guess is: " + guess)
 
             // If the user guesses wrong, tell them they were wrong and the right word.
-            
+            if (guess !== word) {
+                alert("NOPE. The correct word was: " + word)
+            }
             // If the user guesses the correct word, congratulate them.
+            else {
+                alert("YOU ARE AHHHMAZING!!!");
+            }
 
             playing = confirm("Press OK To keep playing or Cancel to quit");
 
