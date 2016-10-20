@@ -24,7 +24,9 @@
             // Grab the corresponding scrambled word from the SCRAMBLED array
 
             // prompt the user to guess the original word when given the scrambled word
-            var guess = prompt(scramPrompt);
+            var guess = (prompt(scramPrompt)).toLowerCase().trim();
+
+            console.log("*********" + guess + "*********")
             // alert("Your guess is: " + guess)
 
             // If the user guesses wrong, tell them they were wrong and the right word.
